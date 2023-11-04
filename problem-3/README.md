@@ -1,0 +1,7 @@
+- WalletBalance interface and FormattedWalletBalance interface have two same properties (currency and amount) so FormattedWalletBalance inherits WalletBalance and "formatted" property is added to FormattedWalletBalance.
+- Added the "blockchain" property to the WalletBalance interface.
+- Created a "priorities" object to hold the priority values for different blockchains.
+- Modified the "getPriority" function to get the priority value from the "priorities" object.
+- Replaced "lhsPriority" with "balancePriority" in the filter function. Changed "if else" block code to conditional (ternary) operator
+- Added a default case (return 0) in "sort" function if "leftPriority" and "rightPriority" are equal.
+- Changed the "sortedBalances" array to "formattedBalances".

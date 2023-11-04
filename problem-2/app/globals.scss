@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter;
+  @apply bg-dark-blue;
+}
+
+.flexStart {
+  @apply flex items-center justify-start;
+}
+
+/* Form Field */
+.form_field-input {
+  @apply w-full outline-0;
+  &.search-icon {
+    background-image: url('/icons/search.svg');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding-left: 40px;
+  }
+  &[type='number'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      -webkit-appearance: none;
+    }
+  }
+}
+
+.dropdown {
+  @apply relative text-black bg-white rounded-full p-2 w-[150px] cursor-pointer;
+}
+
+.custom-scrollbar {
+  @apply relative bg-white z-20 w-full lg:w-[350px] h-96 overflow-y-scroll overflow-x-hidden;
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+}
+
+.overlay {
+  @apply block fixed top-0 left-0 w-full h-full bg-backdrop z-10 transition-opacity duration-200;
+}
+
+.modal {
+  @apply w-full h-full z-10 flex flex-col justify-center items-center transition-all duration-200;
+  &--wrapper {
+    @apply bg-white p-4 rounded-md;
+  }
+  &--title {
+    @apply flex justify-between items-center mb-4;
+    p {
+      @apply font-bold;
+    }
+  }
+  &--body {
+    @apply bg-white;
+  }
+}
+
+.list-item {
+  @apply flex gap-2 px-2 py-3 items-center cursor-pointer hover:bg-list-hover;
+}
+
+.exchange-input {
+  @apply flex justify-center items-end bg-exchange-input rounded-[4px] p-4 text-[#707a8a];
+}
+
+.tooltip {
+  @apply absolute bg-[#ff0000] text-white p-1 rounded-[5px] -bottom-10 left-0 transition-all duration-200;
+  &::before {
+    @apply absolute w-[10px] h-[10px] content-['']  -top-4 left-8 border-t-transparent border-l-transparent border-r-transparent border-b-[#ff0000] border-8;
+  }
+}
